@@ -1,0 +1,91 @@
+@import './tokens.css';
+@import './Form.css';
+
+.update-soon {
+  pointer-events: none;
+  color: gray !important;
+  border-color: gray !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-body);
+}
+
+.main {
+  padding: 24px 32px;
+  background-color: var(--color-surface-canvas);
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border-default);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-secondary);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--color-border-focus);
+  outline: 2px solid var(--color-surface-accent-subtle);
+  outline-offset: 2px;
+}
+
+button {
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border-default);
+  color: var(--color-text-primary);
+  background-color: var(--color-action-secondary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0;
+}
+
+button:hover {
+  background-color: var(--color-action-secondary-hover);
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--color-text-inverse);
+  background-color: var(--color-action-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-action-primary-hover);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+} 

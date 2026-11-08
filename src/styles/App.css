@@ -1,0 +1,4 @@
+.app-layout {
+  display: grid;
+  grid-template-columns: 232px minmax(0, 1fr);
+}

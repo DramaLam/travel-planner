@@ -1,0 +1,288 @@
+.form {
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border-default);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--color-surface-card);
+}
+
+/* Название дня */
+.form__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+/* Название шага */
+.form__step-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 0 16px;
+  border-radius: 17px;
+  margin: 0;
+  font-family: var(--font-step);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--color-action-primary);
+  background-color: var(--color-surface-accent-subtle);
+}
+/* Названия полей */
+.form__label {
+  margin-left: 10px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+/* Текст внутри input и textarea */
+.form__input {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--color-text-primary);
+}
+
+/* Плейсхолдеры этих полей */
+.form__input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 1;
+}
+
+/* Маленькие поясняющие надписи */
+.form__hint {
+  margin-left: 10px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--color-text-secondary);
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form__add-step {
+  align-self: flex-start;
+}
+
+.form__field--date {
+  width: 170px;
+  max-width: 100%;
+}
+
+.form__add-field {
+  padding: 0;
+  border: none;
+  color: var(--color-action-primary);
+  background-color: transparent;
+}
+
+.form__add-field:hover {
+  color: var(--color-action-primary-hover);
+  background-color: transparent;
+}
+
+.form__add-field-group {
+  margin-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.form__description {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.form__time-options {
+  display: flex;
+  gap: 8px;
+}
+
+.form__time-option {
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  color: var(--color-action-primary);
+  background-color: var(--color-surface-accent-subtle);
+}
+
+.form__field-data {
+  display: flex;
+  gap: 16px;
+}
+
+.form__field-data > .form__field {
+  width: 100px;
+}
+
+.form__time-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form__heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.form__day-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
+  color: var(--color-action-primary);
+  background-color: var(--color-surface-accent-subtle);
+}
+
+.form__day-number-text {
+  transform: translateY(-4px);
+}
+
+.form__step-number{
+  font-family: var(--font-step);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.form__input--empty {
+  color: var(--color-text-secondary);
+}
+
+.form__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__step-title-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Общая рамка вокруг кнопки и инпута */
+.form__input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 7px 12px 7px 8px;
+  border: 1px solid var(--color-border-default);
+  border-radius: 16px;
+  background-color: var(--color-surface-input);
+}
+
+/* Кнопка выбора иконки */
+.form__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+
+  color: var(--color-action-primary);
+  background-color: var(--color-surface-accent-subtle);
+}
+
+.form__icon-button:hover {
+  background-color: var(--color-action-secondary-hover);
+}
+
+/* Инпут внутри общей рамки */
+.form__input--embedded {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+/* Подсветка всей группы */
+.form__input--embedded:focus-within {
+  border-color: var(--color-border-focus);
+  outline: 2px solid var(--color-surface-accent-subtle);
+  outline-offset: 2px;
+}
+
+/* У инпута теперь общая подсветка с контейнером */
+.form__input--embedded:focus {
+  outline: none;
+}
+
+/* Отдельный индикатор фокуса кнопки */
+.form__icon-button:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.form__step-delete {
+
+}
+
+.form__step-delete:hover {
+  color: var(--color-status-danger-foreground);
+}
+
+.form__cost-dur {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.form__cost-dur > .form__field {
+  flex: 1;
+  min-width: 0;
+}
+
+.form__add-field-file {
+  align-self: flex-start;
+  padding: 0;
+  border: none;
+  color: var(--color-text-secondary);
+}
+
+.form__add-field-file:hover {
+  color: var(--color-action-primary-hover);
+  background-color: transparent;
+}

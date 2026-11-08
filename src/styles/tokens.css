@@ -1,0 +1,76 @@
+:root {
+  --font-body: 'Noto Sans', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-step: 'Lora', serif;
+  
+  /* Фоны */
+  --color-surface-canvas: #fafafd;
+  --color-surface-card: #ffffff;
+  --color-surface-input: #ffffff;
+  --color-surface-header: #f0eff8;
+  --color-surface-sidebar: #f0eff8;
+  --color-surface-day-header: #f7f5ff;
+  --color-surface-accent-subtle: #f0ebff;
+
+  /* Текст */
+  --color-text-primary: #191b27;
+  --color-text-secondary: #70788f;
+  --color-text-tertiary: #747b90;
+  --color-text-accent: #6539ee;
+  --color-text-inverse: #ffffff;
+  --color-text-on-photo: #ffffff;
+
+  /* Боковая панель */
+  --color-sidebar-text: #33384d;
+  --color-sidebar-muted: #747b90;
+
+  /* Границы */
+  --color-border-default: #e4e4ef;
+  --color-border-soft: #dcd7e9;
+  --color-border-focus: #6539ee;
+
+  /* Действия */
+  --color-action-primary: #6539ee;
+  --color-action-primary-hover: #5428db;
+  --color-action-secondary: #ffffff;
+  --color-action-secondary-hover: #e2d9fb;
+
+  /* Идеи и заметки */
+  --color-ideas-surface: #f5f2ff;
+  --color-ideas-accent: #6539ee;
+  --color-note-surface: #f7f5ff;
+
+  /* Статусы */
+  --color-status-saved: #267f7c;
+  --color-status-danger-foreground: #a44848;
+  --color-status-warning-foreground: #986a20;
+  --color-status-warning-background: #fff4df;
+  --color-status-info-foreground: #2481c9;
+  --color-status-info-background: #eaf5ff;
+
+  /* Остальные элементы */
+  --color-icon-bulb: #e8ac36;
+  --color-time-default: #6750ae;
+  --color-overlay-dim: #243b3b;
+  --color-base-black: #000000;
+
+  /* Цвета разделов */
+  --color-section-purple-accent: #7144da;
+  --color-section-purple-tint: #eee8ff;
+  --color-section-orange-accent: #c36948;
+  --color-section-orange-tint: #fff0e9;
+  --color-section-blue-accent: #2481c9;
+  --color-section-blue-tint: #eaf5ff;
+  --color-section-gray-accent: #778095;
+  --color-section-gray-tint: #f0f1f5;
+
+  /* Дополнительные цвета reference из макета */
+  --color-reference-dad4ea: #dad4ea;
+  --color-reference-747a86: #747a86;
+  --color-reference-c4c8d4: #c4c8d4;
+  --color-reference-50566f: #50566f;
+  --color-reference-e4e1ef: #e4e1ef;
+  --color-reference-a48cd5: #a48cd5;
+  --color-reference-f3f3fb: #f3f3fb;
+  --color-reference-e9eff8: #e9eff8;
+}

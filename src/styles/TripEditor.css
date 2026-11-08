@@ -1,0 +1,190 @@
+.trip-editor__heading {
+  box-sizing: border-box;
+  height: 224px;
+  padding: 24px 32px;
+  margin-bottom: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.trip-editor__title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.trip-editor__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: 0;
+  color: var(--color-text-primary);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.trip-h1 > .trip-editor__title {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.trip-editor__title:hover {
+  border: none;
+  background-color: transparent
+}
+
+.trip-editor__input {
+  width: 800px;
+  background-color: transparent;
+}
+
+.trip-editor__description {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-text-secondary);
+}
+
+.trip-editor__edit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.trip-editor__title-row:hover .trip-editor__edit,
+.trip-editor__title-row:focus-within .trip-editor__edit {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.trip-editor__edit:hover {
+  background-color: transparent;
+}
+
+.trip-editor__edit-icon {
+  display: block;
+  transform: translateY(7px);
+}
+
+.trip-editor__editing-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trip-editor__editing-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  color: var(--color-text-accent);
+  background-color: var(--color-surface-accent-subtle);
+}
+
+.trip-editor__editing-btn-done {
+  color: var(--color-status-saved);
+}
+
+.trip-editor__editing-btn-cancel {
+  color: var(--color-status-danger-foreground);
+}
+
+.trip-editor__day__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trip-editor__day__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.trip__day-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
+  color: var(--color-action-primary);
+  background-color: var(--color-surface-accent-subtle);
+}
+
+.trip__day-number-text {
+  transform: translateY(-4px);
+}
+
+.trip-editor__plus {
+  align-self: center;
+  border-color: transparent;
+}
+
+.trip-editor__plus:hover {
+  color: var(--color-action-primary-hover);
+}
+
+.trip-editor__plus:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.trip-editor__plus-text {
+  display: block;
+  flex-shrink: 0;
+}
+
+.trip__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: none;
+  color: var(--color-text-secondary);
+  background-color: transparent;
+}
+
+.trip__icon:hover {
+  /* color: var(--color-sidebar-text); */
+  background-color: transparent;
+}
+
+
+/* На сенсорных устройствах показываем кнопку постоянно */
+@media (hover: none) {
+  .trip-editor__edit {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
