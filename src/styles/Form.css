@@ -256,10 +256,6 @@
   outline-offset: 2px;
 }
 
-.form__step-delete {
-
-}
-
 .form__step-delete:hover {
   color: var(--color-status-danger-foreground);
 }

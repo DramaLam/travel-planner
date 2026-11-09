@@ -3,31 +3,27 @@ import { useState } from 'react';
 import NewDay from './NewDay';
 import TripDayCard from './TripDayCard';
 
-import { useAppSelector } from '../store/hooks';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { tripRenamed } from '../store/tripSlice';
 
 import pencilIcon from '../assets/icons/pencil.svg';
 import { trip as messages } from '../locales/ru.json';
 
 import '../styles/TripEditor.css';
 
-type TitleObj = {
-  name: string;
-  isEditing: boolean;
-};
-
 function TripEditor() {
   const days = useAppSelector((state) => state.trip.days);
 
-  const initialTitle: TitleObj = {
-    name: messages.title,
-    isEditing: false
-  };
+  const title = useAppSelector((state) => state.trip.title);
 
-  const [title, setTitle] = useState(initialTitle);
-  const [draftTitle, setDraftTitle] = useState(title.name);
+  const [draftTitle, setDraftTitle] = useState(title);
+  const [isEditingTitle, setIsEditingTitle] = useState(false);
+
+  const dispatch = useAppDispatch();
 
   const handleStartEditing = () => {
-    setTitle({ ...title, isEditing: true })
+    setDraftTitle(title);
+    setIsEditingTitle(true);
   };
 
   const handleRenameEditing = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,12 +37,12 @@ function TripEditor() {
   };
 
   const handleRenameDone = () => {
-    setTitle({ name: draftTitle, isEditing: false })
+    dispatch(tripRenamed(draftTitle));
+    setIsEditingTitle(false);
   };
 
   const handleRenameCancel = () => {
-    setTitle({ ...title, isEditing: false });
-    setDraftTitle(title.name);
+    setIsEditingTitle(false);
   };
 
   const [isCreatingDay, setCreatingDay] = useState(false);
@@ -64,10 +60,10 @@ function TripEditor() {
   };
 
   return (
-    <main className="main">
+    <main className="main" id="route">
       <div className="trip-editor__heading">
         <div className="trip-editor__title-row">
-          {title.isEditing ? (
+          {isEditingTitle ? (
             <div
               className="trip-editor__editing-group"
               onBlur={handleEditingBlur}
@@ -136,7 +132,7 @@ function TripEditor() {
                   className="trip-editor__title"
                   onClick={handleStartEditing}
                 >
-                  {title.name}
+                  {title}
                 </button>
               </h1>
 
