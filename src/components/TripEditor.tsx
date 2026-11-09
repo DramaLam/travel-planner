@@ -7,11 +7,14 @@ import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { tripRenamed } from '../store/tripSlice';
 
 import pencilIcon from '../assets/icons/pencil.svg';
-import { trip as messages } from '../locales/ru.json';
 
 import '../styles/TripEditor.css';
 
+import useMessages from '../locales/useMessages'
+
 function TripEditor() {
+  const { trip: messages } = useMessages();
+
   const days = useAppSelector((state) => state.trip.days);
 
   const title = useAppSelector((state) => state.trip.title);

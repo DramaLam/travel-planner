@@ -1,6 +1,5 @@
 import type { TripDay, TripStep } from '../types/trip';
-
-import { trip as messages } from '../locales/ru.json';
+import { useAppSelector } from '../store/hooks';
 
 import settingIcon from '../assets/icons/setting.svg';
 import hidden from '../assets/icons/hidden.svg';
@@ -9,12 +8,17 @@ import more from '../assets/icons/more.svg';
 import '../styles/TripDayCard.css';
 import '../styles/TripEditor.css';
 
+import useMessages from '../locales/useMessages';
+
 type TripDayCardProps = {
   day: TripDay;
   dayNumber: number;
 };
 
 function TripDayCard({ day, dayNumber }: TripDayCardProps) {
+  const language = useAppSelector((state) => state.settings.language);
+  const locale = language === 'en' ? 'en-US' : 'ru-RU';
+  const { trip: messages } = useMessages();
 
   // Date
   const date = day.date
@@ -22,14 +26,14 @@ function TripDayCard({ day, dayNumber }: TripDayCardProps) {
     : null;
 
   const formattedDate = date
-    ? date.toLocaleDateString('ru-RU', {
+    ? date.toLocaleDateString(locale, {
         day: 'numeric',
         month: 'long',
       })
     : '';
 
   const weekday = date
-    ? date.toLocaleDateString('ru-RU', {
+    ? date.toLocaleDateString(locale, {
         weekday: 'long',
       })
     : '';
@@ -100,9 +104,6 @@ function TripDayCard({ day, dayNumber }: TripDayCardProps) {
             aria-label={messages.stepsHidden}
           >
             <img src={hidden} alt="" width="20" height="20" />
-
-            {/* <img src={vector1} alt="" width="10" height="10" /> */}
-            {/* <img src={vector2} alt="" width="10" height="10" /> */}
           </button>
         </div>
 

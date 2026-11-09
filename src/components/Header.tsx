@@ -1,12 +1,14 @@
-import { app as messages } from '../locales/ru.json';
-
 import { useAppSelector } from '../store/hooks';
 
 import compass from '../assets/icons/compass.svg';
 
 import '../styles/Header.css';
 
+import useMessages from '../locales/useMessages';
+
 function Header() {
+  const { app: messages } = useMessages();
+  
   const { writeStatus, isTitleDirty, isDayDirty } = useAppSelector(
     (state) => state.saveStatus
   );

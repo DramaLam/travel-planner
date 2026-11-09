@@ -1,0 +1,128 @@
+{
+  "app": {
+    "name": "Travel Planner",
+    "save": "Saved"
+  },
+
+  "navigation": {
+    "route": "Itinerary",
+    "ideas": "Ideas",
+    "documents": "Documents",
+    "preparation": "Preparation",
+    "participants": "Travelers",
+    "settings": "Settings",
+    "collapseMenu": "Collapse menu",
+    "expandMenu": "Expand menu"
+  },
+
+  "settings": {
+    "title": "Settings",
+    "description": "Appearance and language",
+    "languageTitle": "App language",
+    "languageDescription": "Choose your interface language",
+    "defaultLabel": "Default",
+    "info": "Changes are applied and saved automatically"
+  },
+
+  "trip": {
+    "title": "My itinerary",
+    "emptyDescription": "Add your first day to start planning your trip",
+    "editTitle": "Edit itinerary title",
+    "editDone": "Save title",
+    "editCancel": "Cancel editing",
+    "firstDayTitle": "Add your first day",
+    "firstDayText": "Start with a day, then add steps to it.",
+    "daySetting": "Day settings",
+    "stepsHidden": "Expand or collapse steps",
+    "addStep": "Add step"
+  },
+
+  "newDay": {
+    "title": "New day",
+    "description": "Give your day a name and add steps to your itinerary",
+    "name": {
+      "label": "Day name",
+      "placeholder": "e.g., A free day by the sea"
+    },
+    "date": {
+      "label": "Date",
+      "placeholder": "mm/dd/yyyy"
+    },
+    "addStep": "Add another step",
+    "submit": "Add day",
+    "cancel": "Cancel"
+  },
+
+  "newStep": {
+    "title": "step",
+    "delete": "Delete step",
+    "name": {
+      "label": "Step name",
+      "placeholder": "e.g., A walk through the old town",
+      "chooseIcon": "Choose an icon for this step"
+    },
+    "time": {
+      "start": "Start time",
+      "end": "End time",
+      "placeholder": "hh:mm",
+      "quickOptions": "Suggested times",
+      "quickOptionsHint": "Choose a time for the selected field (start or end)"
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "e.g., Walk along the waterfront and watch the sunset"
+    },
+
+    "additionalFields": {
+      "title": "Add to this step",
+      "cost": "Cost",
+      "duration": "Duration",
+      "shortNote": "Quick note",
+      "note": "Note",
+      "address": "Address",
+      "link": "Link",
+      "attachment": "Ticket or file",
+      "booking": "Booking"
+    },
+
+    "cost": {
+      "label": "Cost",
+      "placeholder": "€18 per person"
+    },
+    "duration": {
+      "label": "Duration",
+      "placeholder": "1 hour"
+    },
+    "shortNote": {
+      "label": "Quick note",
+      "placeholder": "Table by the window"
+    },
+    "note": {
+      "label": "Note",
+      "placeholder": "Ask if they have plant-based milk.\nPick up our bags from the hotel after breakfast"
+    },
+    "address": {
+      "label": "Address",
+      "placeholder": "12 Waterfront Road · Entrance on the square"
+    },
+    "link": {
+      "label": "Link",
+      "placeholder": "https://example.com/cafe"
+    },
+    "attachment": {
+      "label": "Ticket or file",
+      "placeholder": "Add a file",
+      "addMore": "Add another file",
+      "remove": "Remove file"
+    },
+    "booking": {
+      "label": "Booking",
+      "placeholder": "Confirmed · BR-1206 · 2 guests"
+    },
+
+    "preview": {
+      "label": "Details shown below the description",
+      "example": "~€15 per person · ~1.5 hours · If we feel like it"
+    }
+  }
+}

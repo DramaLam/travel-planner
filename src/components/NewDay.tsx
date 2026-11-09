@@ -13,7 +13,7 @@ import type {
   StepOptionalField,
 } from '../types/trip';
 
-import { newDay as messages } from '../locales/ru.json';
+import useMessages from '../locales/useMessages';
 
 const initialForm: DayDraft = {
   name: '',
@@ -45,6 +45,8 @@ type NewDayProps = {
 };
 
 function NewDay({ onCancel, onSave }: NewDayProps) {
+  const { newDay: messages } = useMessages();
+  
   const dispatch = useAppDispatch();
   const [state, setState] = useState(initialForm);
 

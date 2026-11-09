@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { navigation as messages } from '../locales/ru.json';
-
 import '../styles/Sidebar.css';
+
+import useMessages from '../locales/useMessages'
 
 const routeIcon =
   'M12.5 4.16667L7.5 2.5L2.5 4.16667V17.5L7.5 15.8333M7.5 2.5V15.8333M7.5 15.8333L12.5 17.5L17.5 15.8333V2.5L12.5 4.16667M12.5 4.16667V17.5';
@@ -24,26 +24,29 @@ const settingsIcon =
 
 type SidebarItem = {
   href: string;
-  label: string;
+  labelKey: 'route' | 'ideas' | 'documents' | 'preparation' | 'participants' | 'settings';
   icon: string;
 };
 
 const mainItems: SidebarItem[] = [
-  { href: '#route', label: messages.route, icon: routeIcon },
-  { href: '#ideas', label: messages.ideas, icon: ideasIcon },
-  { href: '#documents', label: messages.documents, icon: documentsIcon },
-  { href: '#preparation', label: messages.preparation, icon: preparationIcon },
+  { href: '#route', labelKey: 'route', icon: routeIcon },
+  { href: '#ideas', labelKey: 'ideas', icon: ideasIcon },
+  { href: '#documents', labelKey: 'documents', icon: documentsIcon },
+  { href: '#preparation', labelKey: 'preparation', icon: preparationIcon },
 ];
 
 const bottomItems: SidebarItem[] = [
-  { href: '#participants', label: messages.participants, icon: participantsIcon },
-  { href: '#settings', label: messages.settings, icon: settingsIcon },
+  { href: '#participants', labelKey: 'participants', icon: participantsIcon },
+  { href: '#settings', labelKey: 'settings', icon: settingsIcon },
 ];
 
 function Sidebar() {
+  const { navigation: messages } = useMessages();
+
   const [activeHash, setActiveHash] = useState(
     () => window.location.hash || '#route'
   );
+
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleLabel = isCollapsed
@@ -59,7 +62,10 @@ function Sidebar() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const renderLink = ({ href, label, icon }: SidebarItem) => (
+  const renderLink = ({ href, labelKey, icon }: SidebarItem) => {
+    const label = messages[labelKey];
+    
+    return (
     <li key={href}>
       <a
         className="sidebar__link"
@@ -85,7 +91,8 @@ function Sidebar() {
         {!isCollapsed && <span>{label}</span>}
       </a>
     </li>
-  );
+  )
+};
 
   return (
     <aside className={isCollapsed ? 'sidebar sidebar--collapsed' : 'sidebar'}>

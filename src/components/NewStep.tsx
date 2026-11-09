@@ -1,6 +1,8 @@
-import { newStep as messages } from '../locales/ru.json';
-import type { StepDraft, StepTextField, StepOptionalField } from '../types/trip';
 import { useState } from 'react';
+
+import type { StepDraft, StepTextField, StepOptionalField } from '../types/trip';
+
+import useMessages from '../locales/useMessages';
 
 type NewStepProps = {
   step: StepDraft;
@@ -20,6 +22,8 @@ type ActiveTimeField =
 
 
 function NewStep({ step, stepNumber, onStepDelete, onFieldChange, onFieldAdd}: NewStepProps) {
+  const { newStep: messages } = useMessages();
+  
   const [activeTimeField, setActiveTimeField] = useState<ActiveTimeField>('startTime')
 
   return (
