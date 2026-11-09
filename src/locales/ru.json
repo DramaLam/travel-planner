@@ -1,13 +1,18 @@
 {
   "app": {
-    "name": "Путевой план"
+    "name": "Путевой план",
+    "save": "Сохранено"
   },
   
   "navigation": {
     "route": "Маршрут",
     "ideas": "Идеи",
     "documents": "Документы",
-    "preparation": "Подготовка"
+    "preparation": "Подготовка",
+    "participants": "Участники",
+    "settings": "Настройки",
+    "collapseMenu": "Свернуть меню",
+    "expandMenu": "Развернуть меню"
   },
 
   "trip": {

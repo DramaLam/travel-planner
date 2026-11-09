@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: var(--color-surface-sidebar);
+}
+
+.header__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.header__save {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-status-saved);
+}

@@ -1,4 +1,15 @@
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
 .app-layout {
+  flex: 1;
   display: grid;
   grid-template-columns: 232px minmax(0, 1fr);
+}
+
+.app-layout:has(> .sidebar--collapsed) {
+  grid-template-columns: 64px minmax(0, 1fr);
 }
