@@ -40,11 +40,12 @@ const initialForm: DayDraft = {
 };
 
 type NewDayProps = {
+  dayNumber: number,
   onCancel: () => void;
   onSave: () => void;
 };
 
-function NewDay({ onCancel, onSave }: NewDayProps) {
+function NewDay({ dayNumber, onCancel, onSave }: NewDayProps) {
   const { newDay: messages } = useMessages();
   
   const dispatch = useAppDispatch();
@@ -121,7 +122,9 @@ function NewDay({ onCancel, onSave }: NewDayProps) {
       <div className='form__intro'>
         <div className="form__heading">
           <span className="trip__day-number">
-            <span className="trip__day-number-text">1</span>
+            <span className="trip__day-number-text">
+              {dayNumber}
+            </span>
           </span>
           <h3 className="form__title">{messages.title}</h3>
         </div>
@@ -139,7 +142,7 @@ function NewDay({ onCancel, onSave }: NewDayProps) {
             required
           />
         </div>
-        
+
         <div  className='form__field'>
           <label htmlFor="" className='form__label'>{messages.date.label}</label>
           <input

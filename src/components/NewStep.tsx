@@ -473,7 +473,7 @@ function NewStep({ step, stepNumber, onStepDelete, onFieldChange, onFieldAdd}: N
             {!step.visibleFields.includes('attachments') && (
               <button
                 type="button"
-                className='form__add-field'
+                className='form__add-field update-soon'
                 onClick={() => onFieldAdd(step.id, "attachments")}
               >
                 + {messages.additionalFields.attachment}

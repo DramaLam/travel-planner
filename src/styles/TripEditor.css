@@ -121,6 +121,13 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
+  color: var(--color-text-primary);
+}
+
+.trip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .trip__day-number {

@@ -176,7 +176,7 @@ function TripEditor() {
         )}
 
         {/* Days */}
-        <div>
+        <div className='trip-content'>
           {days.map((day, index) => (
             <TripDayCard
               key={day.id}
@@ -187,6 +187,7 @@ function TripEditor() {
 
           {isCreatingDay && (
             <NewDay
+              dayNumber={days.length + 1}
               onCancel={handleCancelCreateNewDay}
               onSave={handleDaySaved}
             />
