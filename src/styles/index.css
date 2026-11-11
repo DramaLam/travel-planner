@@ -53,6 +53,12 @@ textarea:focus {
   outline-offset: 2px;
 }
 
+input:not([type="radio"]):not([type="checkbox"]),
+textarea {
+  background-color: var(--color-surface-input);
+  color: var(--color-text-primary);
+}
+
 button {
   padding: 12px;
   border-radius: 16px;

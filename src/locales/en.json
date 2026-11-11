@@ -18,6 +18,11 @@
   "settings": {
     "title": "Settings",
     "description": "Appearance and language",
+    "themeTitle": "Appearance",
+    "themeDescription": "Choose a light or dark theme, or use your device settings.",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System",
     "languageTitle": "App language",
     "languageDescription": "Choose your interface language",
     "defaultLabel": "Default",

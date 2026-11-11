@@ -18,6 +18,11 @@
   "settings": {
     "title": "Настройки",
     "description": "Внешний вид и язык приложения",
+    "themeTitle": "Тема оформления",
+    "themeDescription": "Выберите светлую, тёмную тему или настройки вашего устройства.",
+    "themeLight": "Светлая",
+    "themeDark": "Тёмная",
+    "themeSystem": "Системная",
     "languageTitle": "Язык приложения",
     "languageDescription": "Выберите язык интерфейса",
     "defaultLabel": "По умолчанию",

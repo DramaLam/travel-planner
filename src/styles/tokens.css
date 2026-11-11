@@ -74,3 +74,77 @@
   --color-reference-f3f3fb: #f3f3fb;
   --color-reference-e9eff8: #e9eff8;
 }
+
+[data-theme="dark"] {
+  /* Фоны */
+  --color-surface-canvas: #141416;
+  --color-surface-card: #1e1e22;
+  --color-surface-input: #26262c;
+  --color-surface-header: var(--color-surface-card);
+  --color-surface-sidebar: #1b1b1f;
+  --color-surface-day-header: #25222d;
+  --color-surface-accent-subtle: #30283f;
+
+  /* Текст */
+  --color-text-primary: #f2f2f5;
+  --color-text-secondary: #acaab7;
+  --color-text-tertiary: #b0aebc;
+  --color-text-accent: #c6aeff;
+  --color-text-inverse: #191b27;
+  --color-text-on-photo: #ffffff;
+
+  /* Боковая панель */
+  --color-sidebar-text: #f2f2f5;
+  --color-sidebar-muted: #b0aebc;
+
+  /* Границы */
+  --color-border-default: #37373e;
+  --color-border-soft: #3a3544;
+  --color-border-focus: #c6aeff;
+
+  /* Действия */
+  --color-action-primary: #c6aeff;
+  --color-action-primary-hover: #d8c8ff;
+  --color-action-secondary: var(--color-surface-card);
+  --color-action-secondary-hover: #3b304d;
+
+  /* Идеи и заметки */
+  --color-ideas-surface: #2c2639;
+  --color-ideas-accent: #c6aeff;
+  --color-note-surface: #28252f;
+
+  /* Статусы */
+  --color-status-saved: #90d5c5;
+  --color-status-danger-foreground: #f4a4a4;
+  --color-status-warning-foreground: #e9bd7d;
+  --color-status-warning-background: #342b20;
+  --color-status-info-foreground: #9dc9f4;
+  --color-status-info-background: #232c33;
+
+  /* Остальные элементы */
+  --color-icon-bulb: #e8ac36;
+  --color-time-default: #c6aeff;
+  --color-overlay-dim: #000000;
+  --color-base-black: #000000;
+
+  /* Цвета разделов */
+  --color-section-purple-accent: #c4b1e5;
+  --color-section-purple-tint: #302b39;
+  --color-section-orange-accent: #e8ac83;
+  --color-section-orange-tint: #382e26;
+  --color-section-blue-accent: #92c8ee;
+  --color-section-blue-tint: #29343e;
+  --color-section-gray-accent: #b9c6d1;
+  --color-section-gray-tint: #282a30;
+
+  /* Дополнительные цвета reference */
+  --color-reference-dad4ea: #28282e;
+  --color-reference-747a86: #b0aebc;
+  --color-reference-c4c8d4: #28282e;
+  --color-reference-50566f: #50566f;
+  --color-reference-e4e1ef: #28282e;
+  --color-reference-a48cd5: #a48cd5;
+  --color-reference-f3f3fb: #28282e;
+  --color-reference-e9eff8: #28282e;
+
+}

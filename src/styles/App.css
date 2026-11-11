@@ -13,3 +13,12 @@
 .app-layout:has(> .sidebar--collapsed) {
   grid-template-columns: 64px minmax(0, 1fr);
 }
+
+.app-layout__editor:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-layout__editor > .main {
+  flex: 1;
+}

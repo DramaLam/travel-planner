@@ -11,10 +11,35 @@ import './styles/App.css';
 
 function App() {
   const language = useAppSelector((state) => state.settings.language);
+  const themePreference = useAppSelector((state) => state.settings.themePreference);
 
   useEffect(() => {
     document.documentElement.lang = language;
+
+    localStorage.setItem('travel-planner-language', language);
   }, [language]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    localStorage.setItem('travel-planner-theme', themePreference);
+
+    function applyTheme() {
+      let resolvedTheme = themePreference;
+
+      if (themePreference === 'system'){
+        resolvedTheme = mediaQuery.matches ? 'dark' : 'light';
+      }
+
+      document.documentElement.dataset.theme = resolvedTheme;
+    };
+
+    applyTheme();
+
+    mediaQuery.addEventListener('change', applyTheme);
+
+    return () => mediaQuery.removeEventListener('change', applyTheme);
+  }, [themePreference]);
 
   const [isSettingsOpen, setIsSettingsOpen] = useState(
     () => window.location.hash === '#settings'
@@ -32,10 +57,14 @@ function App() {
   return (
     <>
       <Header />
+
       <div className='app-layout'>
         <Sidebar />
         
-        <div hidden={isSettingsOpen}>
+        <div
+          className='app-layout__editor'
+          hidden={isSettingsOpen}
+        >
           <TripEditor />
         </div>
 

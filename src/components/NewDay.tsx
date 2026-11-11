@@ -127,6 +127,7 @@ function NewDay({ onCancel, onSave }: NewDayProps) {
         </div>
         <p className='text-secondary'>{messages.description}</p>
       </div>
+
       <div className='form__group'>
         <div className='form__field'>
           <label htmlFor="" className='form__label'>{messages.name.label} *</label>
@@ -138,6 +139,7 @@ function NewDay({ onCancel, onSave }: NewDayProps) {
             required
           />
         </div>
+        
         <div  className='form__field'>
           <label htmlFor="" className='form__label'>{messages.date.label}</label>
           <input

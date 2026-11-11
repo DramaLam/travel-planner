@@ -17,6 +17,10 @@
   color: var(--color-text-primary);
 }
 
+.header__icon {
+  color: var(--color-text-accent);
+}
+
 .header__save {
   display: flex;
   align-items: center;
