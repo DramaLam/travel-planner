@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import type { TripDay, TripStep } from '../types/trip';
 import { useAppSelector } from '../store/hooks';
 
@@ -19,6 +21,8 @@ function TripDayCard({ day, dayNumber }: TripDayCardProps) {
   const language = useAppSelector((state) => state.settings.language);
   const locale = language === 'en' ? 'en-US' : 'ru-RU';
   const { trip: messages } = useMessages();
+
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   // Date
   const date = day.date
@@ -66,7 +70,10 @@ function TripDayCard({ day, dayNumber }: TripDayCardProps) {
       className='trip-day'
     >
       {/* Day title */}
-      <div className='trip-day__header'>
+      <button
+        className='trip-day__header'
+        onClick={() => setIsCollapsed(!isCollapsed)}
+      >
         <div>
           <span className="trip__day-number">
             <span className="trip__day-number-text">
@@ -92,7 +99,7 @@ function TripDayCard({ day, dayNumber }: TripDayCardProps) {
         <div className='trip-day__actions'>
           <button
             type='button'
-            className='trip__icon'
+            className='trip__icon trip-day__day-setting'
             aria-label={messages.daySetting}
           >
             <img src={settingIcon} alt="" width="20" height="20" />
@@ -107,58 +114,60 @@ function TripDayCard({ day, dayNumber }: TripDayCardProps) {
           </button>
         </div>
 
-      </div>
+      </button>
 
       {/* Day steps */}
-      <div>
-        {sortedSteps.map((step) => (
-          <div
-            key={step.id}
-            className='trip-day__step'
-          >
-            <div className='trip-day__step__time-group'>
-              <span className='trip-day__step__time trip-day__step__time-primary'>
-                {step.startTime}
-              </span>
-              <span className='trip-day__step__time'>
-                {step.endTime}
-              </span>
-            </div>
-
-            <div className="trip-day__step-marker" aria-hidden="true" />
-
-            <div className="trip-day__step-content">
-              {step.icon && (
-                <span className="trip-day__step-icon">
-                  {step.icon}
-                </span>
-              )}
-
-              <div className='trip-day__step__info-group'>
-                <p className='trip-day__step__name'>
-                  {step.name}
-                </p>
-                
-                <p className='trip-day__step__description'>
-                  {step.description}
-                </p>
-
-                <p className='trip-day__step__optionalInfo'>
-                  {renderOptionalInfo(step)}
-                </p>
-              </div>
-            </div>
-
-            <button
-              type='button'
-              className='trip__icon trip-day__step-menu'
-              aria-label={messages.daySetting}
+      { sortedSteps.length !== 0 && !isCollapsed && 
+        <div>
+          {sortedSteps.map((step) => (
+            <div
+              key={step.id}
+              className='trip-day__step'
             >
-              <img src={more} alt="" width="20" height="20" />
-            </button>
-          </div>
-        ))}
-      </div>
+              <div className='trip-day__step__time-group'>
+                <span className='trip-day__step__time trip-day__step__time-primary'>
+                  {step.startTime}
+                </span>
+                <span className='trip-day__step__time'>
+                  {step.endTime}
+                </span>
+              </div>
+
+              <div className="trip-day__step-marker" aria-hidden="true" />
+
+              <div className="trip-day__step-content">
+                {step.icon && (
+                  <span className="trip-day__step-icon">
+                    {step.icon}
+                  </span>
+                )}
+
+                <div className='trip-day__step__info-group'>
+                  <p className='trip-day__step__name'>
+                    {step.name}
+                  </p>
+                  
+                  <p className='trip-day__step__description'>
+                    {step.description}
+                  </p>
+
+                  <p className='trip-day__step__optionalInfo'>
+                    {renderOptionalInfo(step)}
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type='button'
+                className='trip__icon trip-day__step-menu'
+                aria-label={messages.daySetting}
+              >
+                <img src={more} alt="" width="20" height="20" />
+              </button>
+            </div>
+          ))}
+        </div>
+      }
 
       {/* Add step */}
       <div>

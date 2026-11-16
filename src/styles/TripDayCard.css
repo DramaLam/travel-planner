@@ -12,6 +12,15 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+}
+
+.trip-day__header:hover {
+  border: none;
+  background-color: transparent;
 }
 
 .trip-day__actions {
@@ -39,6 +48,22 @@
   flex-shrink: 0;
 }
 
+.trip-day__day-setting {
+  opacity: 0;
+}
+
+.trip-day__header:hover .trip-day__day-setting{
+  opacity: 1;
+}
+
+.trip-day__step-menu {
+  opacity: 0;
+}
+
+.trip-day__step:hover .trip-day__step-menu{
+  opacity: 1;
+}
+
 .trip-day__title {
   margin: 0;
   font-family: var(--font-heading);
@@ -49,12 +74,22 @@
 }
 
 .trip-day__info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
   flex: 1;
   min-width: 0;
 }
 
 .trip-day__date {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
   margin: 0;
+  
   font-size: 12px;
   line-height: 18px;
   color: var(--color-text-secondary);
